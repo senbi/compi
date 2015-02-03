@@ -1,4 +1,17 @@
-%%
+Changes: 
+
+1. Character constants removed
+2. Changed INTCONSTANT to INT_CONSTANT
+3. Changed the production for constant_expression to include FLOAT_CONSTANT
+4. Added examples of FLOAT_CONSTANTS
+5. Added the description of STRING_LITERAL
+6. Changed primary_expression and FOR
+
+-----------------------------------------------------------------------
+
+start symbol is translation_unit
+
+----------------------------------------------------
 translation_unit
 	: function_definition
 	| translation_unit function_definition
@@ -110,9 +123,10 @@ postfix_expression
 
 primary_expression
 	: l_expression
+    |  l_expression '=' expression       // added this production
 	| INT_CONSTANT
 	| FLOAT_CONSTANT
-        | STRING_LITERAL
+    | STRING_LITERAL
 	| '(' expression ')'
 	;
 
@@ -135,7 +149,7 @@ selection_statement
 
 iteration_statement
 	: WHILE '(' expression ')' statement
-	| FOR '(' assignment_statement expression ';' assignment_statement ')' statement
+	| FOR '(' expression ';' expression ';' expression ')' statement  //modified this production
 	;
 
 declaration_list
@@ -154,7 +168,7 @@ declarator_list
 
 -----------------------------------------------------------------------------------------
 
-A description of integer and float costants. Not part of the grammar.  
+A description of integer and float constants. Not part of the grammar.  
 
 Numeric constants are defined as: 
 
@@ -196,7 +210,11 @@ The following are not examples of FLOAT_CONSTANTs:
 234
 .
 
-
+We have not yet defined STRING_LITERALs. For our purpose, these are
+sequence of characters enclosed within a pair of ". If the enclosed
+sequence contains \ and ", they must be preceded with a \. Apart from
+\and ", the only other character that can follow a \ within a string
+are t and n. 
 
 
 

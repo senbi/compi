@@ -1,0 +1,33 @@
+int main(){
+	int i,k;
+	int j;
+	float f;
+	int array[20][20];
+	void a,b;
+	f = 1.0;
+	f = 0;
+	f = .00023;
+	i = sum(1,2);
+	/* jjj
+*/
+	k = "hello \\ dfakljk ";
+	k = "bye * dkjfakl */ kjdflka // \" dfad ";
+	for(j=0;j<20;j++){
+		for(i=0;i<20;i++){
+			array[i][j] = i*j;
+		}
+	}
+	while(1){
+		for (k = 2; k < 10; k = k + 1){
+			i = i + k;
+		}
+	}		
+
+	return 3;
+	
+}
+
+int sum(int i, int j){
+	return i + j;	
+}
+

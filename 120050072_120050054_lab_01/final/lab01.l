@@ -16,7 +16,7 @@ SEMICOLON   			;
 OR_OP       			\|\|
 AND_OP      			&&
 EQ_OP       			==
-NOT_OP					!
+NOT_OP				!
 NEQ_OP      			!=
 LE_OP       			\<=
 GE_OP       			\>=

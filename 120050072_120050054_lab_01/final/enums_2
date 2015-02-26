@@ -8,7 +8,7 @@
                 WHILE,
                 FOR,
                 RETURN,
-                IDENTIFIER,
+                NEQ_OP,
                 OR_OP,
                 AND_OP,
                 EQ_OP,

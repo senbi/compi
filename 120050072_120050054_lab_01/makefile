@@ -5,6 +5,7 @@ lex.cc: lex-example.l
 	cond_remove_scannerh
 	flexc++ lex-example.l; 
 	sed -i '/int lex()/r enums' Scanner.h
-
+clean:
+	rm -f Scanner* a.out lex.cc
 
 

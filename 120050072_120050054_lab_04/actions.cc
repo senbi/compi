@@ -541,9 +541,11 @@ void index_ast::print(){
 }
 ToFloat_ast::ToFloat_ast(){
 	exp_0 = NULL;
+	t= new Type (Type::Base , Type::Float);
 }
 ToFloat_ast::ToFloat_ast(Exp_ast* a){
 	exp_0 = a;
+	t= new Type (Type::Base , Type::Float);
 }
 void ToFloat_ast::print(){
 	std::cout<<" ( To_Float ";
@@ -552,9 +554,11 @@ void ToFloat_ast::print(){
 }
 ToInt_ast::ToInt_ast(){
 	exp_0 = NULL;
+	t= new Type (Type::Base , Type::Int);
 }
 ToInt_ast::ToInt_ast(Exp_ast* a){
 	exp_0 = a;
+	t= new Type (Type::Base , Type::Int);
 }
 void ToInt_ast::print(){
 	std::cout<<" ( To_Int ";

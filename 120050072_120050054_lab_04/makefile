@@ -9,7 +9,7 @@ lex.cc: lex.l  Scanner.ih
 	flexc++ lex.l; 
 #	sed -i '/include/a #include "Parserbase.h"' Scanner.ih; 
 
-parse.cc: parse1.y Parser.ih 
+parse.cc: parse.y Parser.ih 
 	bisonc++ --construction  parse1.y; 
 #	bisonc++   --construction -V parse.y; 
 #	sed -i '/insert preincludes/a #include "headers.cc"' Parserbase.h;
@@ -19,10 +19,10 @@ parse.cc: parse1.y Parser.ih
 clean:
 	rm -f Scanner*
 	rm -f Parser*
-	rm -f parse.cc parse1.y.output lex.cc a.out junk 
-Parser.ih: parse1.y
-Parser.h:  parse1.y
-Parserbase.h: parse1.y
+	rm -f parse.cc parse.y.output lex.cc a.out junk 
+Parser.ih: parse.y
+Parser.h:  parse.y
+Parserbase.h: parse.y
 Scanner.ih: lex.l
 Scanner.h: lex.l
 Scannerbase.h: lex.l

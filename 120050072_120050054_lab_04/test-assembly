@@ -1,0 +1,15 @@
+float keka(int k)
+{
+	int j;
+	j=33;
+	return k+j;
+}
+
+int main(){
+	int j,jv;
+	float jc[3];
+	float ad[10];
+	keka(3);
+
+	return 2;
+}

@@ -1,0 +1,11 @@
+	(Block [(For (Assign_exp (Identifier x )(INTconst 0 ) )
+	(LT (Identifier x )(INTconst 10 ) )
+	(PP (Identifier x ) )
+	(Empty) )
+	(If (GT (Identifier y )(INTconst 1 ) )
+	(Block [(Assign (Identifier x )(Minus (Identifier x )(INTconst 1 ) )
+	 )(Assign (Identifier y )(Plus (Identifier y )(INTconst 1 ) )
+	 ) ])
+	(Empty) )
+	 ])
+	

@@ -6,7 +6,7 @@ COMMA			 		\,
 SQUARE_BRACKET  		\[|\]
 INT_CONSTANT			([\+\-]?[1-9][0-9]*)|(0[bB][01]*)|(0[0-7]*)|(0[xX][0-9a-fA-F]*)
 FLOAT_CONSTANT			[\+\-]?[0-9]*\.[0-9]+((([eE][\+\-][0-9]*)|([eE][0-9]*))?)
-STRING_LITERAL			\"([^\\\n\"\t]*(\\[\" \n \t]?))*\"
+STRING_LITERAL			\"([^\\\n\t\"]*(\\["nt])?)*\"
 DIGIT					[0-9]
 LETTER					[a-zA-z]
 IDENTIFIER				[[:alpha:]_][[:alpha:][:digit:]_]*
@@ -16,7 +16,7 @@ SEMICOLON   			;
 OR_OP       			\|\|
 AND_OP      			&&
 EQ_OP       			==
-NOT_OP					!
+NOT_OP				!
 NEQ_OP      			!=
 LE_OP       			\<=
 GE_OP       			\>=
@@ -29,7 +29,7 @@ IF		 				if
 ELSE	 				else 
 WHILE					while 
 FOR 					for
-RETURN 					return
+RETURN 					RETURN
 WHITESPACE 				[ \t\n]
 COMMENT 				\/\*[^\*]*(\*([^\/\*][^\*]*))?*\*\/ 
 
@@ -44,7 +44,7 @@ COMMENT 				\/\*[^\*]*(\*([^\/\*][^\*]*))?*\*\/
 {WHILE}					{return WHILE;}
 {FOR}					{return FOR;}
 {RETURN}				{return RETURN;}
-{IDENTIFIER}			{return IDENTIFIER;}
+{IDENTIFIER}				{return IDENTIFIER;}
 \,						{return ',';}
 \[						{return '[';}
 \]						{return ']';}

@@ -9,6 +9,7 @@ int main(){
 	int j,jv;
 	float jc[3];
 	float ad[10];
+	float jk,jo;
 	keka(3);
 
 	return 2;

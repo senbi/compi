@@ -1145,7 +1145,7 @@ void otherOP_ast::generate_code(){
 			genCode(indent+ "cmpi(0,eax);");
 			genCode(indent+"jne("+s1+");");
 			genCode(indent+"storei(1,ind(esp));");
-			genCode(indent+"jne("+s2+");");
+			genCode(indent+"j("+s2+");");
 			genCode(s1+":");
 			genCode(indent+"storei(0,ind(esp));");
 			genCode(s2+":");
@@ -1156,7 +1156,7 @@ void otherOP_ast::generate_code(){
 			genCode(indent+ "cmpf(0,eax);");
 			genCode(indent+"jne("+s1+");");
 			genCode(indent+"pushi(1)");
-			genCode(indent+"jne("+s2+");");
+			genCode(indent+"j("+s2+");");
 			genCode(s1+":");
 			genCode(indent+"pushi(0)");
 			genCode(s2+":");

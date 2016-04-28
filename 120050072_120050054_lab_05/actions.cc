@@ -1127,13 +1127,11 @@ void otherOP_ast::generate_code(){
 		if(t->basetype == Type::Int){
 			exp_0->generate_code();
 			genCode(indent + "loadi(ind(esp),eax);");
-			genCode(indent+"popi(1);");
 			genCode(indent+ "muli(-1,eax);");
 			genCode(indent+"storei(eax,ind(esp));");
 		}else if(t->basetype == Type::Float){
 			exp_0->generate_code();
 			genCode(indent + "loadf(ind(esp),eax);");
-			genCode(indent+"popf(1);");
 			genCode(indent+ "mulf(-1,eax);");
 			genCode(indent+"storef(eax,ind(esp));");
 		}

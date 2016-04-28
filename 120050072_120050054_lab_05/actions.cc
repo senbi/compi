@@ -1142,7 +1142,6 @@ void otherOP_ast::generate_code(){
 		if(t->basetype == Type::Int){
 			exp_0->generate_code();
 			genCode(indent + "loadi(ind(esp),eax);");
-			genCode(indent+"popi(1);");
 			genCode(indent+ "cmpi(0,eax);");
 			genCode(indent+"jne("+s1+");");
 			genCode(indent+"storei(1,ind(esp));");
@@ -1159,7 +1158,7 @@ void otherOP_ast::generate_code(){
 			genCode(indent+"storei(1,ind(esp));");
 			genCode(indent+"jne("+s2+");");
 			genCode(s1+":");
-			genCode(indent+"storei(0,ind(esp));");
+			genCode(indent+"pushi(0)");
 			genCode(s2+":");
 		}
 		break;

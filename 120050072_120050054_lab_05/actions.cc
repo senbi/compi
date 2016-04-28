@@ -1155,7 +1155,7 @@ void otherOP_ast::generate_code(){
 			genCode(indent+"popf(1);");
 			genCode(indent+ "cmpf(0,eax);");
 			genCode(indent+"jne("+s1+");");
-			genCode(indent+"storei(1,ind(esp));");
+			genCode(indent+"pushi(1)");
 			genCode(indent+"jne("+s2+");");
 			genCode(s1+":");
 			genCode(indent+"pushi(0)");
